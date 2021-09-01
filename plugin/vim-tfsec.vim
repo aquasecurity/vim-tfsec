@@ -1,7 +1,16 @@
+""
+" @usage {}
+" Run tfsec against the current directory and populate the QuickFix list
 command! Tfsec call s:tfsec()
 
+""
+" @usage {}
+" Install the latest version of tfsec to %GOPATH/bin/tfsec
 command! TfsecInstall call s:tfsecInstall()
 
+""
+" @usage {}
+" Updates tfsec to the latest version, requires tfsec to be on the path
 command! TfsecUpdate call s:tfsecUpdate()
 
 

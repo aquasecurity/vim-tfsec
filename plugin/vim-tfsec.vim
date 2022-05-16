@@ -24,7 +24,7 @@ function! s:tfsec() abort
 		let &g:errorformat = '%f\,%l\,%m'
 
 		" get the latest tfsec comments and open the quick fix window with them
-		cgetexpr system('tfsec --format csv --force-all-dirs --exclude-downloaded-modules 2>/dev/null | grep -v ''file,start_line,'' | awk -F, ''{print $1","$2",["$5"] " $6}'' | sort ') | cw
+		cgetexpr system('tfsec --format csv --force-all-dirs --exclude-downloaded-modules 2>/dev/null \| grep -v ''file,start_line,'' \| awk -F, ''{print $1","$2",["$5"] " $6}'' \| sort ') | cw
 		call setqflist([], 'a', {'title' : ':Tfsec'})
 	finally
 		" restore the errorformat value
